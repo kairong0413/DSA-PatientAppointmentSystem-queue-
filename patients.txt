@@ -1,0 +1,14 @@
+103,Ahmad Fauzi,0812,3
+105,Aisyah Binti Ramli,0818,1
+113,Chong Mei Yi,0840,1
+115,Daniel Wong,0847,5
+107,Farah Nadia,0823,2
+108,Gopal Raj,0825,1
+110,Hafiz Abdullah,0830,3
+112,Jason Ong,0836,2
+106,John Michael,0820,2
+116,Lian,0824,3
+109,Mei Ling Tan,0828,3
+111,Nurul Izzati,0833,2
+102,Siti Nurhaliza,0810,1
+114,Suresh Kumar,0843,3
