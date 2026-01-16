@@ -1,5 +1,5 @@
 #include "LLClinicQueueSystem.h"
-#include <sstream> // Required for stringstream
+#include <sstream> 
 
 // Color definitions
 #define RESET   "\033[0m"
@@ -29,8 +29,6 @@ int getIntegerInput() {
     }
 }
 
-// 2. NEW WAIT FUNCTION (Replaces pauseSystem):
-// This is pure C++, no system commands. It just waits for one Enter key press.
 void waitForUser() {
     cout << "\nPress [Enter] to continue...";
     string dummy;
@@ -106,7 +104,7 @@ void LLClinicQueueSystem::addPatient() {
     // 1. ID INPUT
     while (true) {
         cout << "Enter ID: ";
-        id = getIntegerInput(); // Safe input
+        id = getIntegerInput(); 
         
         // Check Duplicate
         bool duplicate = false;
@@ -122,7 +120,6 @@ void LLClinicQueueSystem::addPatient() {
         if (!duplicate) break; 
     }
 
-    // 2. STRING INPUT (Safe now because getIntegerInput cleans the buffer)
     cout << "Enter Name: "; 
     getline(cin, name);
     
@@ -142,7 +139,7 @@ void LLClinicQueueSystem::addPatient() {
     saveAllToFile();
     
     cout << GREEN << "Patient enqueued successfully.\n" << RESET;
-    waitForUser(); // Simple wait
+    waitForUser(); 
 }
 
 void LLClinicQueueSystem::deletePatient() {
@@ -354,7 +351,6 @@ void LLClinicQueueSystem::searchByID() const {
             cout << string(55, '-') << endl;
             current->data.displayPatient();
             
-            // Const function workaround: Since waitForUser isn't const
             cout << "\nPress [Enter] to continue...";
             string dummy; getline(cin, dummy);
             return;
@@ -494,8 +490,8 @@ void LLClinicQueueSystem::userMenu() {
             case 1: searchByID(); break;
             case 2: searchByName(); break;
             case 3: displayAlphabetically(); break;
-            case 4: viewFirstPatientInQueue(); break; // Call separate feature
-            case 5: viewLastPatientInQueue(); break;  // Call separate feature
+            case 4: viewFirstPatientInQueue(); break; 
+            case 5: viewLastPatientInQueue(); break;  
             default: 
                 cout << RED << "Invalid choice.\n" << RESET;
                 waitForUser();
@@ -512,8 +508,7 @@ void LLClinicQueueSystem::mainMenu() {
              << "0. Exit\n" << RESET;
         
         cout << "Choice(0-2): "; 
-        choice = getIntegerInput(); // Safe Input
-        
+        choice = getIntegerInput(); 
         if (choice == 0) {
             cout << "Exiting...\n";
             break;
